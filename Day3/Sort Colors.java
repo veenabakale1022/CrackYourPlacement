@@ -25,3 +25,21 @@ class Solution {
         nums[j]=temp;
     }
 }
+
+
+Less Time complexity
+
+    class Solution {
+    public void sortColors(int[] nums) {
+       int counts[] = new int[3];
+       for(int n : nums){
+           counts[n]++;
+       } 
+       for(int countIndex = 0, numsIndex =0; countIndex < 3; countIndex++){
+           for(int j =0; j<counts[countIndex]; j++){
+               nums[numsIndex] = countIndex;
+               numsIndex++;
+           }
+       }
+    }
+}
